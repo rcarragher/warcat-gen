@@ -43,14 +43,14 @@ const eyeColors = ["green", "hazel", "gold", "yellow", "amber", "brown", "blue",
 const eyeSizes = ["small", "large"];
 const eyeColorAdjectives = ["sharp", "dark", "intelligent", "bright", "gentle", "soft", "cold"];
 
-const noseSizes = ["Large", "Small", null];
-const noseColors = ["Pink", "Bright Pink", "Brown", "Gray", "Charcoal", "Black"];
+const noseSizes = ["large", "small", null];
+const noseColors = ["pink", "bright pink", "brown", "gray", "charcoal", "black"];
 
-const tailSizes = ["Long", "Short", "Bobbed", null];
-const tailTextures =  ["Plumy", "Fluffy", "Sleek", "Bushy", "Soft"];
+const tailSizes = ["long", "short", "bobbed", "average-sized"];
+const tailTextures =  ["plumy", "fluffy", "sleek", "bushy", "soft"];
 
 const peltLengths = ["Long", "Short"];
-const peltTextures = ["Fluffy", "Thick", "Sleek", "Bushy", "Soft"];
+const peltTextures = ["fluffy", "thick", "sleek", "bushy", "soft"];
 
 const tfuRanks = ["Leader", "Deputy", "Heir", "Medic", "Settler", "Marauder", "Chaser", "Keeper", "Queen", "Rook", "Kit"];
 const canonRanks = ["Leader", "Deputy", "Medicine Cat", "Elder", "Warrior", "Queen", "Apprentice", "Kit"];
@@ -59,6 +59,10 @@ const tfuClans = ["LeafClan", "CloudClan", "ShellClan", "LilyClan"];
 const canonClans = ["ThunderClan", "WindClan", "RiverClan", "ShadowClan"];
 
 const skills = ["Peacekeeping", "Social Skills", "Hunting", "Fighting", "Building", "Organizing", "Patrolling", "Climbing", "Running", "Fishing"];
+
+const preys = ["Hawk", "Finch", "Thrush", "Crow", "Falcon", "Sparrow", "Pigeon", "Starling", "Magpie", "Pheasant", "Wren",
+ "Moorhen", "Blackbird", "Chicken", "Robin", "Shrew", "Water Shrew", "Rabbit", "Hare", "Snake", "Lizard", "Squirrel", "Vole",
+ "Mouse", "Rat", "Beetle"]
 
 
 function randomFromList(list){
@@ -134,7 +138,7 @@ function generateNewCat(isTfu){
 		build: randomFromList(builds),
 		rank: rankGender.rank,
 		clan: rankGender.clan,
-		prey: Math.random() > 0.5 ? "Yo Momma" : "Yo Poppa",
+		prey: randomFromList(preys),
 		skills: [randomFromList(skills), randomFromList(skills)],
 		body: {
 			color: bodyColor,
@@ -168,16 +172,15 @@ class WarriorCat extends React.Component {
 
     	return(
     		<div className="cat">
-    		    <p>Name:{cat.name.prefix}{cat.name.suffix} </p>
+    		    <p>Name: {cat.name.prefix}{cat.name.suffix} </p>
     		    <p>Appearance: {cat.pelt.length}, {cat.pelt.texture}, {cat.body.adjective} {cat.body.color} fur with {cat.body.pattern}.
-             They have {cat.eyes.size}, {cat.eyes.adjective} {cat.eyes.color} eyes.</p>
+             They have {cat.eyes.size}, {cat.eyes.adjective} {cat.eyes.color} eyes. They have a {cat.tail.size} {cat.tail.texture} tail. They have
+              a {cat.nose.size} {cat.nose.color} nose. </p>
     		    <p>Gender: { cat.isMale ? "Male" : "Female"} </p>
-    		    <p>Favorite Prey: { cat.prey } </p>
-    		    <p>Rank: {cat.rank}</p>
-    		    <p>Build: {cat.build}</p>
-    		    <p>Eyes: {cat.eyes.size} {cat.eyes.adjective} {cat.eyes.color}</p>
-    		    <p>Pelt: {cat.pelt.texture} {cat.pelt.length}</p>
-    		    <p>Color: {cat.body.adjective} {cat.body.color} </p>
+            <p>Build: {cat.build}</p>
+            <p>Rank: {cat.rank}</p>
+            <p>Clan: {cat.clan}</p>
+    		    <p>Favorite Prey: {cat.prey} </p>
     		 </div>
     	);
     }
