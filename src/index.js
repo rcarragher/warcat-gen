@@ -37,7 +37,7 @@ const tabbies = ["classic tabby stripes", "mackerel tabby stripes", "spotted tab
 
 
 
-const underbellies = [null, "and a paler underbelly.", "and a white underbelly."];
+const underbellies = [null, "and a paler underbelly", "and a white underbelly"];
 
 const eyeColors = ["green", "hazel", "gold", "yellow", "amber", "brown", "blue", "blue-green"];
 const eyeSizes = ["small", "large"];
