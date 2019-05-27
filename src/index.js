@@ -37,7 +37,7 @@ const tabbies = ["classic tabby stripes", "mackerel tabby stripes", "spotted tab
 
 
 
-const underbellies = [null, "Paler", "White"];
+const underbellies = [null, "and a paler underbelly.", "and a white underbelly."];
 
 const eyeColors = ["green", "hazel", "gold", "yellow", "amber", "brown", "blue", "blue-green"];
 const eyeSizes = ["small", "large"];
@@ -173,7 +173,7 @@ class WarriorCat extends React.Component {
     	return(
     		<div className="cat">
     		    <p>Name: {cat.name.prefix}{cat.name.suffix} </p>
-    		    <p>Appearance: {cat.pelt.length}, {cat.pelt.texture}, {cat.body.adjective} {cat.body.color} fur with {cat.body.pattern}.
+    		    <p>Appearance: {cat.pelt.length}, {cat.pelt.texture}, {cat.body.adjective} {cat.body.color} fur with {cat.body.pattern} {cat.body.underbelly}.
              They have {cat.eyes.size}, {cat.eyes.adjective} {cat.eyes.color} eyes. They have a {cat.tail.size} {cat.tail.texture} tail. They have
               a {cat.nose.size} {cat.nose.color} nose. </p>
     		    <p>Gender: { cat.isMale ? "Male" : "Female"} </p>
@@ -181,6 +181,7 @@ class WarriorCat extends React.Component {
             <p>Rank: {cat.rank}</p>
             <p>Clan: {cat.clan}</p>
     		    <p>Favorite Prey: {cat.prey} </p>
+            <p>Skills: {cat.skills}</p>
     		 </div>
     	);
     }
