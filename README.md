@@ -1,3 +1,7 @@
+## Warrior Cat Generator
+
+This little project is a way to generate Warrior Cats, inspired by the [Warrior Cats](https://warriorcats.com/) series of books.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
