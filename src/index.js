@@ -26,14 +26,14 @@ const builds = ["Sturdy","Petite", "Delicate","Heavy","Muscular","Tall","Narrow"
 const colors=["yellow", "russet", "red", "orange", "brown", "black", "gray", "blue", "white"];
 const colorAdjectives = ["pale", "dark", "dull ", "bright", null];
 const patterns = ["no pattern", "yellow patches",
-"russet patches", "red patches", "orange patches", "brown patches", "black patches", "gray patches", "blue patches",
- "yellow tabby patches", "russet tabby patches", "red tabby patches", "orange tabby patches", "brown tabby patches",
-  "gray tabby patches", "blue tabby patches", "yellow speckles", "russet speckles", "red speckles", "orange speckles",
+   "russet patches", "red patches", "orange patches", "brown patches", "black patches", "gray patches", "blue patches",
+   "yellow tabby patches", "russet tabby patches", "red tabby patches", "orange tabby patches", "brown tabby patches",
+   "gray tabby patches", "blue tabby patches", "yellow speckles", "russet speckles", "red speckles", "orange speckles",
    "brown speckles", "black speckles", "gray speckles", "blue speckles", "large yellow speckles", "large russet speckles",
-    "large red speckles", "large orange speckles", "large brown speckles", "large black speckles", "large gray speckles",
-    "large blue speckles", "small yellow speckles", "small russet speckles", "small red speckles", "small orange speckles",
-     "small brown speckles", "small black speckles", "small gray speckles", "small blue speckles"];
-const tabbies = [ "classic tabby stripes", "mackerel tabby stripes", "spotted tabby stripes", "marbled tabby stripes"];
+   "large red speckles", "large orange speckles", "large brown speckles", "large black speckles", "large gray speckles",
+   "large blue speckles", "small yellow speckles", "small russet speckles", "small red speckles", "small orange speckles",
+   "small brown speckles", "small black speckles", "small gray speckles", "small blue speckles"];
+const tabbies = ["classic tabby stripes", "mackerel tabby stripes", "spotted tabby stripes", "marbled tabby stripes"];
 
 
 
@@ -72,7 +72,7 @@ function rankClanChooser(isTFU, isMale) {
 	const clan = randomFromList(clans);
 	const rank = randomFromList(ranks);
 
-	if (isMale && rank == "Queen"){
+	if (isMale && rank === "Queen"){
 		//Boys can't be queens, gotta try again
 		return rankClanChooser(isTFU,isMale);
 	}
@@ -123,6 +123,7 @@ function generateNewCat(isTfu){
 	const isMale = Math.random() > 0.5;
 
 	const rankGender = rankClanChooser(isTfu,isMale);
+	const bodyColor = randomFromList(colors);
 
 	return ({
 		name: {
@@ -136,9 +137,9 @@ function generateNewCat(isTfu){
 		prey: Math.random() > 0.5 ? "Yo Momma" : "Yo Poppa",
 		skills: [randomFromList(skills), randomFromList(skills)],
 		body: {
-			color: randomFromList(colors),
-			adjective: randomFromList(colorAdjectives),
-			pattern: randomFromList(patterns),
+			color: bodyColor,
+			adjective: (bodyColor === "white") ? "" : randomFromList(colorAdjectives),
+			pattern: (bodyColor === "white") ? randomFromList(patterns) : randomFromList(tabbies),
 			underbelly: randomFromList(underbellies),
 		},
 		eyes: {
