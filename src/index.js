@@ -23,22 +23,25 @@ const suffixes = ["berry","bird","blaze","branch","breeze","briar","bright","bro
     "tuft","watcher","whisker","willow","wind","wing"];
 
 const builds = ["Sturdy","Petite", "Delicate","Heavy","Muscular","Tall","Narrow"];
-const colors=["Yellow", "Russet", "Red", "Orange", "Brown", "Black", "Gray", "Blue", "White"];
-const colorAdjectives = ["Pale", "Dark", "Dull ", "Bright", null];
-const patterns = [null, "Classic Tabby", "Mackerel Tabby", "Spotted Tabby", "Marbled Tabby", "Yellow Patches", "Russet Patches", 
-                 "Red Patches", "Orange Patches", "Brown Patches", "Black Patches", "Gray Patches", "Blue Patches", "Yellow Tabby Patches",
-                 "Russet Tabby Patches", "Red Tabby Patches", "Orange Tabby Patches", "Brown Tabby Patches", "Gray Tabby Patches", 
-                 "Blue Tabby Patches", "Yellow speckles", "Russet speckles", "Red speckles", "Orange speckles", "Brown speckles", 
-                 "Black speckles", "Gray speckles", "Blue speckles", "Large Yellow speckles", "Large Russet speckles", "Large Red speckles", 
-                 "Large Orange speckles", "Large Brown speckles", "Large Black speckles", "Large Gray speckles", "Large Blue speckles", 
-                 "Small Yellow speckles", "Small Russet speckles", "Small Red speckles", "Small Orange speckles", "Small Brown speckles", 
-                 "Small Black speckles", "Small Gray speckles", "Small Blue speckles"];
+const colors=["yellow", "russet", "red", "orange", "brown", "black", "gray", "blue", "white"];
+const colorAdjectives = ["pale", "dark", "dull ", "bright", null];
+const patterns = ["no pattern", "yellow patches",
+"russet patches", "red patches", "orange patches", "brown patches", "black patches", "gray patches", "blue patches",
+ "yellow tabby patches", "russet tabby patches", "red tabby patches", "orange tabby patches", "brown tabby patches",
+  "gray tabby patches", "blue tabby patches", "yellow speckles", "russet speckles", "red speckles", "orange speckles",
+   "brown speckles", "black speckles", "gray speckles", "blue speckles", "large yellow speckles", "large russet speckles",
+    "large red speckles", "large orange speckles", "large brown speckles", "large black speckles", "large gray speckles",
+    "large blue speckles", "small yellow speckles", "small russet speckles", "small red speckles", "small orange speckles",
+     "small brown speckles", "small black speckles", "small gray speckles", "small blue speckles"];
+const tabbies = [ "classic tabby stripes", "mackerel tabby stripes", "spotted tabby stripes", "marbled tabby stripes"];
+
+
 
 const underbellies = [null, "Paler", "White"];
 
-const eyeColors = ["Green", "Hazel", "Gold", "Yellow", "Amber", "Brown", "Blue", "Blue-green"];
-const eyeSizes = ["Small", "Large", null];
-const eyeColorAdjectives = ["Sharp", "Dark", "Intelligent", "Bright", "Gentle", "Soft", "Cold"];
+const eyeColors = ["green", "hazel", "gold", "yellow", "amber", "brown", "blue", "blue-green"];
+const eyeSizes = ["small", "large"];
+const eyeColorAdjectives = ["sharp", "dark", "intelligent", "bright", "gentle", "soft", "cold"];
 
 const noseSizes = ["Large", "Small", null];
 const noseColors = ["Pink", "Bright Pink", "Brown", "Gray", "Charcoal", "Black"];
@@ -164,8 +167,9 @@ class WarriorCat extends React.Component {
 
     	return(
     		<div className="cat">
-    		    <p>NAME:{cat.name.prefix}{cat.name.suffix} </p>
-    		    <p>Appearance: {cat.pelt.length}, {cat.pelt.texture}, {cat.body.adjective} {cat.body.color} fur with {cat.body.pattern}. </p>
+    		    <p>Name:{cat.name.prefix}{cat.name.suffix} </p>
+    		    <p>Appearance: {cat.pelt.length}, {cat.pelt.texture}, {cat.body.adjective} {cat.body.color} fur with {cat.body.pattern}.
+             They have {cat.eyes.size}, {cat.eyes.adjective} {cat.eyes.color} eyes.</p>
     		    <p>Gender: { cat.isMale ? "Male" : "Female"} </p>
     		    <p>Favorite Prey: { cat.prey } </p>
     		    <p>Rank: {cat.rank}</p>
