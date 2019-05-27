@@ -207,17 +207,30 @@ class Generator extends React.Component {
 	render() {
 		return (
 			<div className="generator">
-				<p>Warrior Generator</p>
-				<WarriorCat cat={this.state.cat} />
-				<button className="generate-button" onClick={ () => this.handleCatClick(true)}>Generate TFU</button>
-				<button className="generate-button" onClick={ () => this.handleCatClick(false)}>Generate Canon</button>
+			    <div className="content">
+					<h1>Warrior Cat Generator</h1>
+				</div>
+				<div className="content">
+					<WarriorCat cat={this.state.cat} />
+					<button className="generate-button" onClick={ () => this.handleCatClick(true)}>Generate TFU</button>
+					<button className="generate-button" onClick={ () => this.handleCatClick(false)}>Generate Canon</button>
+				</div>
 			</div>
 		);
 	}
 }
 
+class App extends React.Component {
+	render() {
+		return ( <div className="app">
+			       <Generator />
+			       </div>
+			    );
+	}
+}
+
 ReactDOM.render(
-	<Generator />,
+	<App />,
  	document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
