@@ -7,7 +7,7 @@ const prefixes = ["Acorn","Adder","Amber","Apple","Ash","Aspen","Bark","Beech","
     "Bounce","Bracken","Branch","Bramble","Brave","Breeze","Briar","Bright","Brindle","Brush","Bumble","Cedar","Cherry","Cinder","Cloud",
     "Clover","Coal","Creek","Cricket","Crow","Daisy","Dapple","Dark","Dawn","Deer","Dew","Dove","Duck","Dusk","Dust","Eagle","Echo",
     "Falcon","Fallow","Fawn","Feather","Fennel","Fern","Ferret","Finch","Fire","Fish","Flame","Flint","Flower","Fox","Frog","Goose",
-    "Gorse","Hail","Hare","Hawk","Hazel","Heather","Heron","Holly","Honey","Ice","Ivy","Jay","Jump","Juniper","Kestrel","Larch","Lark",
+    "Gorse", "Gust", "Hail","Hare","Hawk","Hazel","Heather","Heron","Holly","Honey","Ice","Ivy","Jay","Jump","Juniper","Kestrel","Larch","Lark",
     "Leaf","Leopard","Lichen","Light","Lily","Lion","Little","Lizard","Lynx","Mallow","Marsh","Maple","Meadow","Minnow","Mint","Mink",
     "Mist","Moon","Morning","Moss","Moth","Mouse","Mud","Nettle","Night","Nut","Oak","Olive","Otter","Owl","Pale","Perch","Petal",
     "Pigeon","Pike","Pine","Poppy","Pounce","Puddle","Quail","Quick","Quiet","Rabbit","Rain","Rapid","Raven","Red","Reed","Ripple",
@@ -58,7 +58,7 @@ const canonRanks = ["Leader", "Deputy", "Medicine Cat", "Elder", "Warrior", "Que
 const tfuClans = ["LeafClan", "CloudClan", "ShellClan", "LilyClan"];
 const canonClans = ["ThunderClan", "WindClan", "RiverClan", "ShadowClan"];
 
-const skills = ["Peacekeeping", "Social Skills", "Hunting", "Fighting", "Building", "Organizing", "Patrolling", "Climbing", "Running", "Fishing"];
+const skills = ["Peacekeeping", "Conversing", "Hunting", "Fighting", "Building", "Organizing", "Patrolling", "Climbing", "Running", "Fishing", "Scouting"];
 
 const preys = ["Hawk", "Finch", "Thrush", "Crow", "Falcon", "Sparrow", "Pigeon", "Starling", "Magpie", "Pheasant", "Wren",
  "Moorhen", "Blackbird", "Chicken", "Robin", "Shrew", "Water Shrew", "Rabbit", "Hare", "Snake", "Lizard", "Squirrel", "Vole",
